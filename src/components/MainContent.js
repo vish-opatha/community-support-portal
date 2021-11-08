@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import AgencyLogin from './AgencyLoginForm';
 
 const MainContent = () => {
   return (
@@ -11,6 +12,7 @@ const MainContent = () => {
             are valued, loved and bleseed!
           </Para>
         </Section>
+        <AgencyLogin />
       </div>
     </>
   );
@@ -20,7 +22,7 @@ export default MainContent;
 
 const Section = styled.div`
   //   padding: 0 2rem;
-  // display: flex;
+  display: flex;
   // justify-content: space-between;
   text-align: center;
   margin-left: 20px;
