@@ -18,10 +18,10 @@ export default Footer;
 
 const Section = styled.div`
   padding: 0 2rem;
-  // display: flex;
+  display: flex;
   // justify-content: space-between;
   align-items: center;
-  position: sticky;
+  // position: relative;
   bottom: 0;
   left: 0;
   right: 0;
