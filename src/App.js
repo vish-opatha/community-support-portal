@@ -11,16 +11,21 @@ function App() {
       <Container>
         <Navbar />
         <MainContent />
-      </Container>
 
-      <Footer />
+        <Footer />
+      </Container>
     </>
   );
 }
 
 const Container = styled.div`
-  // background: #fbf7ef;
-  // height: 100vh;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: center
+}
 `;
 
 export default App;
