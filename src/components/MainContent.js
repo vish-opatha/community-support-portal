@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import AgencyLogin from './AgencyLoginForm';
+import AgencySignup from './AgencySignup';
 
 const MainContent = () => {
   return (
@@ -14,6 +15,7 @@ const MainContent = () => {
         </Section>
         <AgencyLogin />
       </div>
+      <AgencySignup />
     </>
   );
 };
