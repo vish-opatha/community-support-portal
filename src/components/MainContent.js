@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import AgencyLogin from './AgencyLoginForm';
 import AgencySignup from './AgencySignup';
+import CreateService from './CreateService';
 
 const MainContent = () => {
   return (
@@ -10,12 +11,13 @@ const MainContent = () => {
         <Section>
           <Para>
             We are here provide a information, to get the support you want. You
-            are valued, loved and bleseed!
+            are valued, loved and blessed!
           </Para>
         </Section>
         <AgencyLogin />
       </div>
       <AgencySignup />
+      <CreateService />
     </>
   );
 };
