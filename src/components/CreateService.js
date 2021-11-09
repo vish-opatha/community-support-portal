@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 // import { validateEmail } from '../utils/helpers';
 // import styled from 'styled-components';
+import agencyServices from './servicesAvailable';
+import ServiceOption from './ServicesOption';
 
-function AgencySignup() {
+function CreateService() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
@@ -52,7 +54,17 @@ function AgencySignup() {
         <FormCol>
           <form>
             <div>
-              <label for="title">Title</label> {``}
+              <label for="Name">Organization</label>
+              <input
+                value={email}
+                name="org"
+                onChange={handleInputChange}
+                type="text"
+                placeholder="Your organisation will appear here."
+              />
+            </div>
+            <div>
+              <label for="title">Type of Services</label> {``}
               <select
                 value={email}
                 name="title"
@@ -60,35 +72,39 @@ function AgencySignup() {
                 type=""
                 placeholder="Enter your email."
               >
-                Select Your title
-                <option>Mr</option>
-                <option>Mrs</option>
-                <option>Miss.</option>
-                <option>Dr.</option>
+                Select the services you provide
+                <ServiceOption agencyServices={agencyServices} />
               </select>
             </div>
             {``}
 
             <div>
-              <label for="Name">Name</label>
-              <input
+              <label for="Name">Elgibility Requirements</label>
+              <textarea
                 value={email}
-                name="name"
+                name="requirements"
                 onChange={handleInputChange}
                 type="text"
-                placeholder="Enter your name.."
+                placeholder="Enter any eligibility requirements, if there are any"
               />
             </div>
 
             {``}
 
             <div>
-              <label for="Name">Organization</label>
+              <label for="Name">Opened Hours</label>
               <input
                 value={email}
                 name="agency"
                 onChange={handleInputChange}
-                type="text"
+                type="date"
+                placeholder="Enter your agency.."
+              />
+              <input
+                value={email}
+                name="agency"
+                onChange={handleInputChange}
+                type="datetime-local"
                 placeholder="Enter your agency.."
               />
             </div>
@@ -96,13 +112,18 @@ function AgencySignup() {
             {``}
 
             <div>
-              <label for="Name">Location</label>
+              <label for="Name">Mode of Communication</label>
               <input
-                value={email}
-                name="location"
-                onChange={handleInputChange}
-                type="text"
-                placeholder="Enter the address of your agency."
+                type="checkbox"
+                id="Walk-in"
+                name="Walk-in"
+                value="Walk-in"
+              />
+              <input
+                type="checkbox"
+                id="Over the phone"
+                name="Over the phon"
+                value="Over the phon"
               />
             </div>
 
@@ -166,14 +187,14 @@ function AgencySignup() {
                 placeholder="Re-enter your password."
               />
             </div>
-            <Button onClick={handleClick}>Submit</Button>
+            <Button onClick={handleClick}>Add Service</Button>
           </form>
         </FormCol>
       </FormRow>
     </FormMainDiv>
   );
 }
-export default AgencySignup;
+export default CreateService;
 
 const Button = styled.button`
   font-size: 1rem;
