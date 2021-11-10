@@ -1,36 +1,36 @@
 const { Schema, model } = require('mongoose');
-const ServiceType = require('./ServiceType');
 
-const serviceProvidedSchema = new Schema(
-  {
-    eligibility:{
-      type:String,
-      required: true,
-      trim: true,
-    },
-    openedDays: {
-      type: [String],
-      required: true,
-    },
-    openedHours:{
-      type: [String],
-      required: true,
-    },
-    modeOfCommunication:{
-        type:[String],
-        required: true,
-    },
-    location:{
-        type:String,
-        required: true,
-        trim: true,
-    },
-    serviceType: [ServiceType]
+const serviceProvidedSchema = new Schema({
+  eligibility: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  openedDays: {
+    type: [String],
+    required: true,
+  },
+  openedHours: {
+    type: [String],
+    required: true,
+  },
+  modeOfCommunication: {
+    type: [String],
+    required: true,
+  },
+  location: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  serviceCategory: {
+    type: Schema.Types.ObjectId,
+    ref: 'ServiceCategory',
+  },
 
-    //References are required to other tables.
-  }
-);
+  //References are required to other tables.
+});
 
-const serviceProvided = model('serviceProvided', serviceProvidedSchema);
+const ServiceProvided = model('ServiceProvided', serviceProvidedSchema);
 
-module.exports = serviceProvided;
+module.exports = ServiceProvided;
