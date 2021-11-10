@@ -1,4 +1,4 @@
-const { User, ServiceCategory } = require('../models');
+const { User, ServiceCategory, ServiceProvided } = require('../models');
 
 // Create the functions that fulfill the queries defined in `typeDefs.js`
 const resolvers = {
@@ -9,6 +9,10 @@ const resolvers = {
     },
     serviceCategories: async () => {
       return await ServiceCategory.find({});
+    },
+
+    servicesProvided: async () => {
+      return await ServiceProvided.find({}).populate('ServiceCategory');
     },
   },
 };
