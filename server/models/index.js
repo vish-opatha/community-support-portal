@@ -3,3 +3,4 @@ const ServiceProvided = require('./ServiceProvided');
 const User = require('./User');
 
 module.exports = { User, ServiceCategory, ServiceProvided };
+// module.exports = { User, ServiceCategory };
