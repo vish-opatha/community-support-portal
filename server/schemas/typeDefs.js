@@ -19,10 +19,21 @@ const typeDefs = gql`
     customerDescription: String
   }
 
+  type ServiceProvided {
+    _id: ID
+    eligibility: String
+    openedDays: String
+    openedHours: String
+    modeOfCommunication: String
+    location: String
+    serviceCategories: [ServiceCategory]
+  }
+
   # Define which queries the front end is allowed to make and what data is returned
   type Query {
     users: [User]
     serviceCategories: [ServiceCategory]
+    servicesProvided: [ServiceProvided]
   }
 `;
 
