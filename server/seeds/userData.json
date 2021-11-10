@@ -1,0 +1,46 @@
+[
+  {
+    "title": "Mrs",
+    "firstName": "Vish ",
+    "lastName": "Opatha",
+    "organisation": "The Salvation Army",
+    "location" : "Seacombe Gardens",
+    "email": "v.opatha@gmail.com",
+    "telephone": "0480100000",
+    "orgWebsite": "www.thesalvos.org",
+    "password": "12345"
+  },
+  {
+    "title": "Mr",
+    "firstName": "Ara ",
+    "lastName": "Hetti",
+    "organisation": "SXC",
+    "location" : "Glenside",
+    "email": "ara@sxc.com.au",
+    "telephone": "0480100000",
+    "orgWebsite": "www.sxc.com",
+    "password": "12345"
+  },
+  {
+    "title": "Mrs",
+    "firstName": "Jane",
+    "lastName": "Cox",
+    "organisation": "Marion Life",
+    "location" : "Allawoona Avanue",
+    "email": "janec@marionlife.com.au",
+    "telephone": "0480100000",
+    "orgWebsite": "www.mccoc.org.au",
+    "password": "12345"
+  },
+  {
+    "title": "Mrs",
+    "firstName": "Corrine",
+    "lastName": "Almeda",
+    "organisation": "Minda Inc",
+    "location" : "Brighton",
+    "email": "corrine.almeda@minda.org.au",
+    "telephone": "0480100000",
+    "orgWebsite": "www.mindainc.org.au",
+    "password": "12345"
+  }
+]
