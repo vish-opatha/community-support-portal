@@ -1,8 +1,9 @@
 const db = require('../config/connection');
 // const { School, Class, Professor } = require('../models');
-const { User, ServiceCategory } = require('../models');
+const { User, ServiceCategory, ServiceProvided } = require('../models');
 const userData = require('./userData.json');
 const categoryData = require('./serviceCategoryData.json');
+const serviceData = require('./serviceData.json');
 // const schoolData = require('./schoolData.json');
 // const classData = require('./classData.json');
 // const professorData = require('./professorData.json');
@@ -12,11 +13,12 @@ db.once('open', async () => {
   // await School.deleteMany({});
   // await Class.deleteMany({});
   // await Professor.deleteMany({});
-  await User.deleteMany({});
-  await ServiceCategory.deleteMany({});
+  // await User.deleteMany({});
+  // await ServiceCategory.deleteMany({});
 
-  const users = await User.insertMany(userData);
-  const categories = await ServiceCategory.insertMany(categoryData);
+  // const users = await User.insertMany(userData);
+  // const categories = await ServiceCategory.insertMany(categoryData);
+  const services = await ServiceProvided.insertMany(serviceData);
 
   // bulk create each model
   // const schools = await School.insertMany(schoolData);

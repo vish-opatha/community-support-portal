@@ -1,0 +1,34 @@
+[
+  {
+    "eligibility": "Need a centerlink referral",
+    "openedDays": "Monday to Friday",
+    "openedHours": "9-5",
+    "modeOfCommunication": "Telephone",
+    "location": "Adelaide",
+    "serviceCategory": "618bb4a083215110c4cbbdf1"
+  },
+  {
+    "eligibility": "Only for registered clients in the surrounding suburbs",
+    "openedDays": "Monday to Friday",
+    "openedHours": "9-5",
+    "modeOfCommunication": "Walk in or Telphone",
+    "location": "Adelaide",
+    "serviceCategory": "618bb4a083215110c4cbbdf1"
+  },
+  {
+    "eligibility": "No requirement",
+    "openedDays": "Monday to Friday",
+    "openedHours": "9-5",
+    "modeOfCommunication": "Walk in only",
+    "location": "Marion",
+    "serviceCategory": "618bb4a083215110c4cbbdf1"
+  },
+  {
+    "eligibility": "Referral is required",
+    "openedDays": "Monday to Friday",
+    "openedHours": "9-3",
+    "modeOfCommunication": "Telephone only",
+    "location": "Arndale",
+    "serviceCategory": "618bb4a083215110c4cbbdf1"
+  }
+]
