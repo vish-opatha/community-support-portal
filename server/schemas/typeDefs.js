@@ -34,6 +34,7 @@ const typeDefs = gql`
     users: [User]
     serviceCategories: [ServiceCategory]
     servicesProvided: [ServiceProvided]
+    user(id: ID): User
   }
 `;
 

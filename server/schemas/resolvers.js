@@ -14,6 +14,10 @@ const resolvers = {
     servicesProvided: async () => {
       return await ServiceProvided.find({}).populate('ServiceCategory');
     },
+
+    user: async (parent, args) => {
+      return await User.findById(args.id);
+    },
   },
 };
 
