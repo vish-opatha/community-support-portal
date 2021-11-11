@@ -6,6 +6,7 @@ const resolvers = {
     users: async () => {
       return await User.find({});
     },
+
     serviceCategories: async () => {
       return await ServiceCategory.find({});
     },
@@ -22,12 +23,12 @@ const resolvers = {
       return await ServiceCategory.findById(args.id);
     },
 
-    //########## Search Services by location================= NEED TO ASK
-    // servicesByLocation: async (parent, args) => {
-    //   return await ServiceProvided.find({})
-    //     .populate('ServiceCategory')
-    //     .filter((s) => s.location == args.suburb);
-    // }, ------------------------------------------------------
+    //########## Search Services by location=================
+    servicesByLocation: async (parent, args) => {
+      const a = await ServiceProvided.find({}).populate('ServiceCategory');
+      return a.filter((s) => s.location == args.location);
+    },
+    // ------------------------------------------------------ .populate('ServiceCategory')
 
     // serviceByCategory: async (parent, { id }) => {
     //   return await ServiceProvided.findById(id).populate('ServiceCategory');

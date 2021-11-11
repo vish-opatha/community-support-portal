@@ -37,7 +37,7 @@ const typeDefs = gql`
     servicesProvided: [ServiceProvided]
     user(id: ID): User
     serviceCategory(id: ID): ServiceCategory
-    #servicesByLocation(suburb: location): [ServiceProvided]
+    servicesByLocation(location: String): [ServiceProvided]
   }
 `;
 
