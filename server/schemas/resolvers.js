@@ -18,6 +18,14 @@ const resolvers = {
     user: async (parent, args) => {
       return await User.findById(args.id);
     },
+
+    serviceCategory: async (parent, args) => {
+      return await ServiceCategory.findById(args.id);
+    },
+
+    // serviceByCategory: async (parent, { id }) => {
+    //   return await ServiceProvided.findById(id).populate('ServiceCategory');
+    // },
   },
 };
 
