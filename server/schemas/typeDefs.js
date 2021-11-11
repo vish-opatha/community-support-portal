@@ -3,6 +3,7 @@ const { gql } = require('apollo-server-express');
 const typeDefs = gql`
   type User {
     _id: ID
+    title: String
     firstName: String
     lastName: String
     organisation: String
@@ -22,9 +23,9 @@ const typeDefs = gql`
   type ServiceProvided {
     _id: ID
     eligibility: String
-    openedDays: String
-    openedHours: String
-    modeOfCommunication: String
+    openedDays: [String]
+    openedHours: [String]
+    modeOfCommunication: [String]
     location: String
     serviceCategories: [ServiceCategory]
   }
@@ -36,6 +37,7 @@ const typeDefs = gql`
     servicesProvided: [ServiceProvided]
     user(id: ID): User
     serviceCategory(id: ID): ServiceCategory
+    #servicesByLocation(suburb: location): [ServiceProvided]
   }
 `;
 

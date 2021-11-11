@@ -4,7 +4,6 @@ const { User, ServiceCategory, ServiceProvided } = require('../models');
 const resolvers = {
   Query: {
     users: async () => {
-      // Get and return all documents from the classes collection
       return await User.find({});
     },
     serviceCategories: async () => {
@@ -23,8 +22,45 @@ const resolvers = {
       return await ServiceCategory.findById(args.id);
     },
 
+    //########## Search Services by location================= NEED TO ASK
+    // servicesByLocation: async (parent, args) => {
+    //   return await ServiceProvided.find({})
+    //     .populate('ServiceCategory')
+    //     .filter((s) => s.location == args.suburb);
+    // }, ------------------------------------------------------
+
     // serviceByCategory: async (parent, { id }) => {
     //   return await ServiceProvided.findById(id).populate('ServiceCategory');
+    // },
+
+    // Mutation: {
+    //   addUser: async (
+    //     parent,
+    //     {
+    //       title,
+    //       firstName,
+    //       lastName,
+    //       organisation,
+    //       location,
+    //       email,
+    //       telephone,
+    //       orgWebsite,
+    //       password,
+    //     }
+    //   ) => {
+    //     // Create and return the new School object
+    //     return await User.create({
+    //       title,
+    //       firstName,
+    //       lastName,
+    //       organisation,
+    //       location,
+    //       email,
+    //       telephone,
+    //       orgWebsite,
+    //       password,
+    //     });
+    //   },
     // },
   },
 };
