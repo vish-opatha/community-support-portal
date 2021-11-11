@@ -52,6 +52,8 @@ const typeDefs = gql`
       orgWebsite: String!
       password: String!
     ): User
+
+    removeService(serviceId: ID!): ServiceProvided
   }
 `;
 

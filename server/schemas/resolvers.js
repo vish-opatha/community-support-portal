@@ -61,7 +61,10 @@ const resolvers = {
         password,
       });
     },
+
+    removeService: async (parent, { serviceId }) => {
+      return await ServiceProvided.findOneAndDelete({ _id: serviceId });
+    },
   },
 };
-
 module.exports = resolvers;
