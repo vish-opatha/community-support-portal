@@ -39,6 +39,20 @@ const typeDefs = gql`
     serviceCategory(id: ID): ServiceCategory
     servicesByLocation(location: String): [ServiceProvided]
   }
+
+  type Mutation {
+    addUser(
+      title: String!
+      firstName: String!
+      lastName: String!
+      organisation: String!
+      location: String!
+      email: String!
+      telephone: String!
+      orgWebsite: String!
+      password: String!
+    ): User
+  }
 `;
 
 module.exports = typeDefs;

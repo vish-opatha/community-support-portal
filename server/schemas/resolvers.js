@@ -28,41 +28,39 @@ const resolvers = {
       const a = await ServiceProvided.find({}).populate('ServiceCategory');
       return a.filter((s) => s.location == args.location);
     },
-    // ------------------------------------------------------ .populate('ServiceCategory')
 
     // serviceByCategory: async (parent, { id }) => {
     //   return await ServiceProvided.findById(id).populate('ServiceCategory');
     // },
+  },
 
-    // Mutation: {
-    //   addUser: async (
-    //     parent,
-    //     {
-    //       title,
-    //       firstName,
-    //       lastName,
-    //       organisation,
-    //       location,
-    //       email,
-    //       telephone,
-    //       orgWebsite,
-    //       password,
-    //     }
-    //   ) => {
-    //     // Create and return the new School object
-    //     return await User.create({
-    //       title,
-    //       firstName,
-    //       lastName,
-    //       organisation,
-    //       location,
-    //       email,
-    //       telephone,
-    //       orgWebsite,
-    //       password,
-    //     });
-    //   },
-    // },
+  Mutation: {
+    addUser: async (
+      parent,
+      {
+        title,
+        firstName,
+        lastName,
+        organisation,
+        location,
+        email,
+        telephone,
+        orgWebsite,
+        password,
+      }
+    ) => {
+      return await User.create({
+        title,
+        firstName,
+        lastName,
+        organisation,
+        location,
+        email,
+        telephone,
+        orgWebsite,
+        password,
+      });
+    },
   },
 };
 
