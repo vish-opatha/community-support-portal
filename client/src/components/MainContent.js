@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import AgencyLogin from './AgencyLoginForm';
 import AgencySignup from './AgencySignup';
 import CreateService from './CreateService';
 import SearchService from './SearchServices';
@@ -15,7 +14,6 @@ const MainContent = () => {
             are valued, loved and blessed!
           </Para>
         </Section>
-        <AgencyLogin />
 
         <AgencySignup />
         <CreateService />
