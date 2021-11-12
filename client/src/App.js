@@ -1,34 +1,38 @@
 import './App.css';
 import React from 'react';
-import styled from 'styled-components';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 import AgencyLogin from './pages/AgencyLoginForm';
-
+import Header from './components/Navbar';
+import Footer from './components/Footer';
 import MainContent from './components/MainContent';
+
+const client = new ApolloClient({
+  uri: '/graphql',
+  cache: new InMemoryCache(),
+});
 
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <MainContent />
-        </Route>
-        <Route path="/agencylogin">
-          <AgencyLogin />
-        </Route>
-      </Switch>
-    </Router>
+    <ApolloProvider client={client}>
+      {/* Wrap page elements in Router component to keep track of location state */}
+      <Router>
+        {/* <div className="flex-column justify-flex-start min-100-vh"> */}
+        <Header />
+        <div className="container">
+          {/* Define routes to render different page components at different paths */}
+          <Route exact path="/">
+            <MainContent />
+          </Route>
+          {/* Define a route that will take in variable data */}
+          <Route exact path="/agencylogin">
+            <AgencyLogin />
+          </Route>
+        </div>
+        <Footer />
+      </Router>
+    </ApolloProvider>
   );
 }
-
-// const Container = styled.div`
-//   display: flex;
-//   flex-wrap: nowrap;
-//   flex-direction: column-reverse;
-//   justify-content: space-between;
-//   align-items: stretch;
-//   align-content: center
-// }
-// `;
 
 export default App;
