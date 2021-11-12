@@ -4,19 +4,21 @@ import styled from 'styled-components';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <Nav>
-      <Logo href="">Community Support Portal</Logo>
-      <Hamburger onClick={() => setIsOpen(!isOpen)}>
-        <span />
-        <span />
-        <span />
-      </Hamburger>
-      <Menu isOpen={isOpen}>
-        <MenuLink href="">About </MenuLink>
-        <MenuLink href="">Agency Login</MenuLink>
-        <MenuLink href="">Contact</MenuLink>
-      </Menu>
-    </Nav>
+    <div>
+      <Nav>
+        <Logo href="">Community Support Portal</Logo>
+        <Hamburger onClick={() => setIsOpen(!isOpen)}>
+          <span />
+          <span />
+          <span />
+        </Hamburger>
+        <Menu isOpen={isOpen}>
+          <MenuLink href="">About </MenuLink>
+          <MenuLink href="/agencylogin">Agency Login</MenuLink>
+          <MenuLink href="">Contact</MenuLink>
+        </Menu>
+      </Nav>
+    </div>
   );
 };
 

@@ -21,11 +21,11 @@ const Section = styled.div`
   display: flex;
   // justify-content: space-between;
   align-items: center;
-  // position: relative;
+  position: sticky;
   bottom: 0;
   left: 0;
   right: 0;
-  width: 100vw%;
+
   height: 10rem;
   background: #720026;
 `;

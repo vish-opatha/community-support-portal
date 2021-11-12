@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import Button from '@material-ui/core/Button';
 // import { validateEmail } from '../utils/helpers';
 // import styled from 'styled-components';
 
@@ -71,32 +71,48 @@ function AgencyLogin() {
             </div>
 
             <Button
-              type="button"
-              // className="mt-3 btn btn-rounded"
+              type="submit"
+              variant="contained"
+              color="#304A36"
               onClick={handleFormSubmit}
             >
               Submit
             </Button>
-          </form>
 
-          {errorMessage && (
-            <div>
-              <p className="error-text mt-1 error-msg">{errorMessage}</p>
-            </div>
-          )}
+            <Button
+              type="submit"
+              variant="contained"
+              color="#304A36"
+              onClick={handleFormSubmit}
+            >
+              Submit
+            </Button>
+            <Button
+              type="submit"
+              variant="contained"
+              color="#304A36"
+              onClick={handleFormSubmit}
+            >
+              Submit
+            </Button>
+            <Button
+              type="submit"
+              variant="contained"
+              color="#304A36"
+              onClick={handleFormSubmit}
+            >
+              Submit
+            </Button>
+
+            {errorMessage && (
+              <div>
+                <p className="error-text mt-1 error-msg">{errorMessage}</p>
+              </div>
+            )}
+          </form>
         </div>
       </div>
     </div>
   );
 }
 export default AgencyLogin;
-
-const Button = styled.button`
-  font-size: 1rem;
-  padding: 5px;
-  width: 100px;
-  border: 0.1rem solid teal;
-  background: white;
-  font-weight: bold;
-  color: teal;
-`;
