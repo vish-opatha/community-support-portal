@@ -1,31 +1,34 @@
 // import './App.css';
 import React from 'react';
 import styled from 'styled-components';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import AgencyLogin from './pages/AgencyLoginForm';
+
 import MainContent from './components/MainContent';
 
 function App() {
   return (
-    <>
-      <Container>
-        <Navbar />
-        <MainContent />
-
-        <Footer />
-      </Container>
-    </>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <MainContent />
+        </Route>
+        <Route path="/agencylogin">
+          <AgencyLogin />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
-const Container = styled.div`
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: column-reverse;
-  justify-content: space-between;
-  align-items: stretch;
-  align-content: center
-}
-`;
+// const Container = styled.div`
+//   display: flex;
+//   flex-wrap: nowrap;
+//   flex-direction: column-reverse;
+//   justify-content: space-between;
+//   align-items: stretch;
+//   align-content: center
+// }
+// `;
 
 export default App;
