@@ -27,22 +27,6 @@ const Footer = () => {
               <ul>
                 <li>
                   <a
-                    className="grey-text text-lighten-3"
-                    href="https://github.com/Dinimar-Fishboi"
-                  >
-                    Dinimar-Fishboi
-                  </a>
-                </li>
-                <li>
-                  <a
-                    class="grey-text text-lighten-3"
-                    href="https://github.com/vikezme"
-                  >
-                    vikezme
-                  </a>
-                </li>
-                <li>
-                  <a
                     class="grey-text text-lighten-3"
                     href="https://github.com/vish-opatha"
                   >
