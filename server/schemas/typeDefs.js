@@ -14,6 +14,11 @@ const typeDefs = gql`
     password: String
   }
 
+  type Auth {
+    token: ID!
+    user: User
+  }
+
   type ServiceCategory {
     _id: ID
     description: String
@@ -51,7 +56,9 @@ const typeDefs = gql`
       telephone: String!
       orgWebsite: String!
       password: String!
-    ): User
+    ): Auth
+
+    login(email: String!, password: String!): Auth
 
     removeService(serviceId: ID!): ServiceProvided
   }

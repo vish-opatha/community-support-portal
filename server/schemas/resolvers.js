@@ -49,7 +49,7 @@ const resolvers = {
         password,
       }
     ) => {
-      return await User.create({
+      const user = User.create({
         title,
         firstName,
         lastName,
@@ -60,6 +60,25 @@ const resolvers = {
         orgWebsite,
         password,
       });
+      const token = signToken(user);
+      return { token, user };
+    },
+
+    login: async (parent, { email, password }) => {
+      const user = await User.findOne({ email });
+
+      if (!user) {
+        throw new AuthenticationError('No user with this email found!');
+      }
+
+      const correctPw = await user.isCorrectPassword(password);
+
+      if (!correctPw) {
+        throw new AuthenticationError('Incorrect password!');
+      }
+
+      const token = signToken(user);
+      return { token, user };
     },
 
     removeService: async (parent, { serviceId }) => {
