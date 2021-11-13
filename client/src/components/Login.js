@@ -1,35 +1,65 @@
-import React from 'react';
+import React, { useState } from 'react';
+// import { Link } from 'react-router-dom';
+import { useMutation } from '@apollo/client';
+import { LOGIN_USER } from '../utils/mutations';
+import Auth from '../utils/auth';
 
+// const Login = (props) => {
 const Login = () => {
+  const [formState, setFormState] = useState({ email: '', password: '' });
+  const [login] = useMutation(LOGIN_USER);
+
+  const handleChange = (event) => 
+  {
+    const { name, value } = event.target;
+
+    setFormState({...formState, [name]: value,});
+  }
+    
+  const handleFormSubmit = async (event) => 
+  {
+      event.preventDefault();
+      console.log(formState);
+
+      try 
+      {
+        const { data } = await login({variables: { ...formState }});
+        console.log('before Auth login line 28');
+        Auth.login(data.login.token);
+      } 
+      catch (e) 
+      {
+        console.error(e);
+        window.prompt("Wrong password");
+      } 
+      
+      finally 
+      {
+        setFormState({email: '', password: ''});
+      }
+  };
+
+
   return (
     <div className="container center">
       <div className="row">
-        <h4 className="flow-text" style={{ fontWeight: 600 }}>
-          You can login to enter new services directly or indirectly related to
-          your agency.
-        </h4>
-        <div className="input-field col s12">
-          <input id="email" type="email" className="validate" />
-          <label for="email">Email</label>
-        </div>
-        <div className="input-field col s12">
-          <input id="password" type="password" />
-          <label for="password">Password</label>
-        </div>
-        <div className="col s12">
-          <a
-            className="waves-effect waves-light btn-small"
-            href="/"
-            style={{
-              background: 'White',
-              color: '#004d40',
-              borderColor: '#004d40',
-              fontWeight: 800,
-            }}
-          >
-            Login
-          </a>
-        </div>
+          <h4 className="flow-text" style={{ fontWeight: 600 }}>
+              You can login to enter new services directly or indirectly related to
+              your agency.
+          </h4>
+          <form className="form" id="loginForm">
+            <div className="form-group">
+                <label for="email">email:</label>
+                <input className="form-input" type="text" name="email" id="email" value={formState.email} onChange={handleChange}/>
+            </div>
+            <div className="form-group">
+              <label for="password-login">password:</label>
+              <input className="form-input" type="password" name="password" id="password" value={formState.password} onChange={handleChange}/>
+            </div>
+            <div className="form-group">
+              <button className="btn red accent-2 waves-effect" onClick={handleFormSubmit}>Login</button>
+            </div>
+          </form>
       </div>
     </div>
   );
