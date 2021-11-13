@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
 import Header from './components/Header';
+import Footer from './components/Footer';
 // import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 // import AgencyLogin from './components/styles/AgencyLoginForm';
@@ -18,6 +19,7 @@ function App() {
   return (
     <>
       <Header />
+      <Footer />
     </>
   );
   // <ApolloProvider client={client}>
