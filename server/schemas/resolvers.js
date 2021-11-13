@@ -1,9 +1,9 @@
-// const { AuthenticationError } = require('apollo-server-express');
+const { AuthenticationError } = require('apollo-server-express');
 // const { User, ServiceCategory, ServiceProvided } = require('../models');
-const User = require('../models/User');
+const { User } = require('../models/User');
 const ServiceCategory = require('../models/ServiceCategory');
 const ServiceProvided = require('../models/ServiceProvided');
-// const { signToken } = require('../utils/auth');
+const { signToken } = require('../utils/auth');
 
 // Create the functions that fulfill the queries defined in `typeDefs.js`
 const resolvers = {
@@ -51,10 +51,10 @@ const resolvers = {
         email,
         telephone,
         orgWebsite,
-        password
+        password,
       }
     ) => {
-      const user = User.create({
+      const user = await User.create({
         title,
         firstName,
         lastName,
@@ -63,9 +63,9 @@ const resolvers = {
         email,
         telephone,
         orgWebsite,
-        password
+        password,
       });
-      // const token = signToken(user);
+      const token = signToken(user);
       return { token, user };
     },
 
