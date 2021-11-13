@@ -49,11 +49,11 @@ const Login = () => {
           </h4>
           <form className="form" id="loginForm">
             <div className="form-group">
-                <label for="email">email:</label>
+                <label htmlfor="email">email:</label>
                 <input className="form-input" type="text" name="email" id="email" value={formState.email} onChange={handleChange}/>
             </div>
             <div className="form-group">
-              <label for="password-login">password:</label>
+              <label htmlfor="password-login">password:</label>
               <input className="form-input" type="password" name="password" id="password" value={formState.password} onChange={handleChange}/>
             </div>
             <div className="form-group">
