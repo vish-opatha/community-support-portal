@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <>
       <nav>
-        <div className="red accent-2 nav-wrapper">
+        <div className="nav-wrapper teal darken-4">
           <a href="/" className="brand-logo">
             Relief Support SA
           </a>
