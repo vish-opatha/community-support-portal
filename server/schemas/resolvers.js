@@ -69,22 +69,22 @@ const resolvers = {
       return { token, user };
     },
 
-    // login: async (parent, { email, password }) => {
-    //   const user = await User.findOne({ email });
+    login: async (parent, { email, password }) => {
+      const user = await User.findOne({ email });
 
-    //   if (!user) {
-    //     throw new AuthenticationError('No user with this email found!');
-    //   }
+      if (!user) {
+        throw new AuthenticationError('No user with this email found!');
+      }
 
-    //   const correctPw = await user.isCorrectPassword(password);
+      const correctPw = await user.isCorrectPassword(password);
 
-    //   if (!correctPw) {
-    //     throw new AuthenticationError('Incorrect password!');
-    //   }
+      if (!correctPw) {
+        throw new AuthenticationError('Incorrect password!');
+      }
 
-    //   const token = signToken(user);
-    //   return { token, user };
-    // },
+      const token = signToken(user);
+      return { token, user };
+    },
 
     removeService: async (parent, { serviceId }) => {
       return await ServiceProvided.findOneAndDelete({ _id: serviceId });
