@@ -1,4 +1,9 @@
-const { User, ServiceCategory, ServiceProvided } = require('../models');
+// const { AuthenticationError } = require('apollo-server-express');
+// const { User, ServiceCategory, ServiceProvided } = require('../models');
+const User = require('../models/User');
+const ServiceCategory = require('../models/ServiceCategory');
+const ServiceProvided = require('../models/ServiceProvided');
+// const { signToken } = require('../utils/auth');
 
 // Create the functions that fulfill the queries defined in `typeDefs.js`
 const resolvers = {
@@ -46,7 +51,7 @@ const resolvers = {
         email,
         telephone,
         orgWebsite,
-        password,
+        password
       }
     ) => {
       const user = User.create({
@@ -58,28 +63,28 @@ const resolvers = {
         email,
         telephone,
         orgWebsite,
-        password,
+        password
       });
-      const token = signToken(user);
+      // const token = signToken(user);
       return { token, user };
     },
 
-    login: async (parent, { email, password }) => {
-      const user = await User.findOne({ email });
+    // login: async (parent, { email, password }) => {
+    //   const user = await User.findOne({ email });
 
-      if (!user) {
-        throw new AuthenticationError('No user with this email found!');
-      }
+    //   if (!user) {
+    //     throw new AuthenticationError('No user with this email found!');
+    //   }
 
-      const correctPw = await user.isCorrectPassword(password);
+    //   const correctPw = await user.isCorrectPassword(password);
 
-      if (!correctPw) {
-        throw new AuthenticationError('Incorrect password!');
-      }
+    //   if (!correctPw) {
+    //     throw new AuthenticationError('Incorrect password!');
+    //   }
 
-      const token = signToken(user);
-      return { token, user };
-    },
+    //   const token = signToken(user);
+    //   return { token, user };
+    // },
 
     removeService: async (parent, { serviceId }) => {
       return await ServiceProvided.findOneAndDelete({ _id: serviceId });
