@@ -27,7 +27,7 @@ const Footer = () => {
               <ul>
                 <li>
                   <a
-                    class="grey-text text-lighten-3"
+                    className="grey-text text-lighten-3"
                     href="https://github.com/vish-opatha"
                   >
                     vish-opatha
@@ -37,8 +37,8 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div class="footer-copyright">
-          <div class="container">Copyright © 2021 by Barter Place</div>
+        <div className="footer-copyright">
+          <div className="container">Copyright © 2021 by Barter Place</div>
         </div>
       </div>
     </>
