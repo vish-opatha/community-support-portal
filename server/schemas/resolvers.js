@@ -1,6 +1,6 @@
 const { AuthenticationError } = require('apollo-server-express');
 // const { User, ServiceCategory, ServiceProvided } = require('../models');
-const { User } = require('../models/User');
+const User = require('../models/User');
 const ServiceCategory = require('../models/ServiceCategory');
 const ServiceProvided = require('../models/ServiceProvided');
 const { signToken } = require('../utils/auth');
