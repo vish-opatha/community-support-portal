@@ -7,14 +7,29 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Search from './components/Search';
 
+// import NotFound from './pages/NotFound';
+
+const client = new ApolloClient({
+  uri: '/graphql',
+  cache: new InMemoryCache(),
+});
+
 function App() {
   return (
-    <>
+    <ApolloProvider client={client}>
       <Header />
-      <Home />
-      <Search />
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/search">
+            <Search />
+          </Route>
+        </Switch>
+      </Router>
       <Footer />
-    </>
+    </ApolloProvider>
   );
 }
 
