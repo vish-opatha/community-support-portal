@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@mui/icons-material": "^5.1.0",
-    "@mui/material": "^5.1.0"
+    "@mui/material": "^5.1.0",
+    "materialize-css": "^1.0.0-rc.2"
   }
 }
