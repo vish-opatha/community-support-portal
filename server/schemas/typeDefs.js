@@ -56,9 +56,9 @@ const typeDefs = gql`
       telephone: String!
       orgWebsite: String!
       password: String!
-    ): User
+    ): Auth
 
-    login(email: String!, password: String!): User
+    login(email: String!, password: String!): Auth
 
     removeService(serviceId: ID!): ServiceProvided
   }
