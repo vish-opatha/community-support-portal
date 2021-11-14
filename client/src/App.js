@@ -9,6 +9,7 @@ import Search from './components/Search';
 import Login from './components/Login';
 import Signup from './pages/Signup';
 import UserService from './pages/UserServiceProfile';
+// import UserService from './pages/UserServiceProfile';
 
 // import NotFound from './pages/NotFound';
 
@@ -36,7 +37,7 @@ function App() {
             <Signup />
           </Route>
           <Route exact path="/UserService">
-            <Signup />
+            <UserService/>
           </Route>
         </Switch>
       </Router>
