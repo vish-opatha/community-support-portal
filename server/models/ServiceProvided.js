@@ -24,7 +24,7 @@ const serviceProvidedSchema = new Schema({
     trim: true,
     uppercase: true
   },
-  categoryId:{
+  categoryId: {
     type:String,
     required:true
   }

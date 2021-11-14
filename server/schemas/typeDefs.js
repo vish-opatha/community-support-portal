@@ -69,7 +69,7 @@ const typeDefs = gql`
       openedHours:String
       modeOfCommunication:String
       location:String
-      categoryId :String
+      categoryId: String
     ): ServiceProvided
   }
 `;

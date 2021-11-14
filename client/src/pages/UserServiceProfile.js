@@ -27,17 +27,17 @@ const UserService = () =>
     {
         e.preventDefault();
 
-        const form = e.currentTarget;
-        if(form.checkValidity()===false)
-        {
-            e.preventDefault();
-            e.stopPropogration();
-        }
+        // const form = e.currentTarget;
+        // if(form.checkValidity()===false)
+        // {
+        //     e.preventDefault();
+        //     e.stopPropogration();
+        // }
 
         try
         {
             const {data} = await addService({variables:{...serviceData}});
-            console.log("User is created!");
+            console.log("Service is created");
         }
         catch (e)
         {
