@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Search from './components/Search';
 import Login from './components/Login';
+import Signup from './pages/Signup';
 
 // import NotFound from './pages/NotFound';
 
@@ -29,6 +30,9 @@ function App() {
           </Route>
           <Route exact path="/agencylogin">
             <Login />
+          </Route>
+          <Route exact path="/agencysignup">
+            <Signup />
           </Route>
         </Switch>
       </Router>
