@@ -13,11 +13,11 @@ db.once('open', async () => {
   // await School.deleteMany({});
   // await Class.deleteMany({});
   // await Professor.deleteMany({});
-  // await User.deleteMany({});
-  // await ServiceCategory.deleteMany({});
+  await User.deleteMany({});
+  await ServiceCategory.deleteMany({});
 
-  // const users = await User.insertMany(userData);
-  // const categories = await ServiceCategory.insertMany(categoryData);
+  const users = await User.insertMany(userData);
+ const categories = await ServiceCategory.insertMany(categoryData);
   const services = await ServiceProvided.insertMany(serviceData);
 
   // bulk create each model

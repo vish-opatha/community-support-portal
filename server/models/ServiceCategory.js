@@ -11,6 +11,10 @@ const serviceCategorySchema = new Schema({
     required: true,
     trim: true,
   },
+  categoryId:{
+    type: Number,
+    required:true,
+  }
 });
 
 const ServiceCategory = model('ServiceCategory', serviceCategorySchema);
