@@ -1,18 +1,27 @@
 [
   {
     "description": "Provide Food",
-    "customerDescription": "Need want help food"
+    "customerDescription": "I want help with food",
+    "categoryId":1
   },
   {
     "description": "Provide Bustickets",
-    "customerDescription": "Need want help bustickets"
+    "customerDescription": "I want help with Bustickets",
+    "categoryId":2
   },
   {
     "description": "Provide Clothing",
-    "customerDescription": "Need want help flothing"
+    "customerDescription": "I want help with Clothing",
+    "categoryId":3
   },
   {
     "description": "Provide Furniture",
-    "customerDescription": "Need want help furniture"
+    "customerDescription": "I want help with essential food",
+    "categoryId":4
+  },
+  {
+    "description": "Provide help for domestic violence victims",
+    "customerDescription": "I want help with domestic violence",
+    "categoryId":5
   }
 ]
