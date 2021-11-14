@@ -29,14 +29,16 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_SERVICE = gql`
-    mutation addService($eligibility: String!, $openedDays: String!, $openedHours: String!,$modeOfCommunication: String!,$location:String!,$categoryId:String) {
-        addUser(eligibility: $eligibility, openedDays: $openedDays, openedHours: $openedHours, modeOfCommunication: $modeOfCommunication,location:$location,categoryId:$categoryId) {
-            ServiceProvided{
-                _id
-            }
-        }
+mutation addService($eligibility: String!, $openedDays: String!, $openedHours: String!, $modeOfCommunication: String!,$location:String!,$categoryId:String) 
+{
+    addUser(eligibility: $eligibility, openedDays: $openedDays, openedHours: $openedHours, modeOfCommunication: $modeOfCommunication,location:$location,categoryId:$categoryId) 
+    {
+        _id
+        location
+        
     }
-`
+}
+`;
 
 
 // export const SAVE_BOOK = gql`
