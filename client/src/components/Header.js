@@ -1,4 +1,6 @@
 import React from 'react';
+import Auth from '../utils/auth';
+import {NavLink} from "react-router-dom";
 
 const Header = () => {
   //   const [isOpen, setIsOpen] = useState(false);
@@ -6,48 +8,61 @@ const Header = () => {
     <>
       <nav>
         <div className="nav-wrapper teal darken-4">
-          <a href="/" className="brand-logo">
+          <NavLink to="/" className="brand-logo">
             Relief Support SA
-          </a>
-          {/* <a href="#" data-target="mobile-demo" className="sidenav-trigger">
+          </NavLink>
+          {/* <NavLink to="#" data-target="mobile-demo" className="sidenav-trigger">
             <i class="material-icons">menu</i>
-          </a> */}
+          </NavLink> */}
           <ul class="right hide-on-med-and-down">
             <li>
-              <a href="/agencysignup">AgencySignup</a>
+                <NavLink to="/">Home</NavLink>
+            </li>
+            {Auth.loggedIn()? (
+              <>
+            <li>
+                <NavLink to="/agencyservices">My Services</NavLink>
             </li>
             <li>
-              <a href="/agencylogin">Agency Login</a>
+              <NavLink to="/logout" className="button is-text" id="logoutBtn">Logout</NavLink>
             </li>
+            </>
+            ) :(
+              <>
             <li>
-              <a href="/search">Search</a>
+              <NavLink to="/agencysignup">Agency Signup</NavLink>
             </li>
+             
             <li>
-              <a href="/logout" className="button is-text" id="logoutBtn">
-                Logout
-              </a>
+              <NavLink to="/agencylogin">Agency Login</NavLink>
             </li>
+            </>
+            )}
+            <li>
+              <NavLink to="/search">Search</NavLink>
+            </li>
+            
           </ul>
         </div>
       </nav>
 
       <ul className="sidenav" id="mobile-demo">
         <li>
-          <a href="/">Home</a>
+          <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <a href="/search">Search Items</a>
+          <NavLink to="/search">Search Items</NavLink>
         </li>
         <li>
-          <a href="/userProfile">My Profile</a>
+          <NavLink to="/userProfile">My Profile</NavLink>
         </li>
         {/* <li>
-          <a className="button is-text" id="mobilelogoutBtn">
+          <NavLink className="button is-text" id="mobilelogoutBtn">
             Logout
-          </a>
+          </NavLink>
         </li> */}
         <li>
-          <a href="/login">Login</a>
+          <NavLink to="/login">Login</NavLink>
         </li>
       </ul>
     </>
