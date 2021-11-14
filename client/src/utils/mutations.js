@@ -15,17 +15,18 @@ export const LOGIN_USER = gql`
     }
 `;
 
-// export const ADD_USER = gql`
-//     mutation addUser($username: String!, $email: String!, $password: String!) {
-//         addUser(username: $username, email: $email, password: $password) {
-//             token
-//             user {
-//                 _id
-//                 username
-//             }
-//         }
-//     }
-// `
+export const ADD_USER = gql`
+    mutation addUser($title: String!, $firstName: String!, $lastName: String!,$organisation: String!,$location:String!,$email: String!,$telephone: String!,$orgWebsite: String!,$password: String!) {
+        addUser(title: $title, firstName: $firstName, lastName: $lastName, organisation: $organisation,location:$location,email:$email,telephone:$telephone,orgWebsite:$orgWebsite,password:$password) {
+            token
+            user
+            {
+                _id
+                email
+            }
+        }
+    }
+`
 // export const SAVE_BOOK = gql`
 //     mutation saveBook($book: BookInput!) {
 //         saveBook(book: $book) {
