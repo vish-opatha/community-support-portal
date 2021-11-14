@@ -17,7 +17,7 @@ const resolvers = {
     },
 
     servicesProvided: async () => {
-      return await ServiceProvided.find({}).populate('ServiceCategory');
+      return await ServiceProvided.find({});
     },
 
     user: async (parent, args) => {
@@ -30,7 +30,7 @@ const resolvers = {
 
     //########## Search Services by location=================
     servicesByLocation: async (parent, args) => {
-      const a = await ServiceProvided.find({}).populate('ServiceCategory');
+      const a = await ServiceProvided.find({})
       return a.filter((s) => s.location == args.location);
     },
 
@@ -89,6 +89,24 @@ const resolvers = {
     removeService: async (parent, { serviceId }) => {
       return await ServiceProvided.findOneAndDelete({ _id: serviceId });
     },
+
+    addService: async(parent,{
+      eligibility,
+      openedDays,
+      openedHours,
+      modeOfCommunication,
+      location,
+      categoryId
+    })=> { const service = await ServiceProvided.create({
+      eligibility,
+      openedDays,
+      openedHours,
+      modeOfCommunication,
+      location,
+      categoryId
+    });
+    
+    return service;}
   },
 };
 module.exports = resolvers;

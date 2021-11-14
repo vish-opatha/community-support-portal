@@ -7,26 +7,27 @@ const serviceProvidedSchema = new Schema({
     trim: true,
   },
   openedDays: {
-    type: [String],
+    type: String,
     required: true,
   },
   openedHours: {
-    type: [String],
+    type: String,
     required: true,
   },
   modeOfCommunication: {
-    type: [String],
+    type: String,
     required: true,
   },
   location: {
     type: String,
     required: true,
     trim: true,
+    uppercase: true
   },
-  serviceCategory: {
-    type: Schema.Types.ObjectId,
-    ref: 'ServiceCategory',
-  },
+  categoryId:{
+    type:String,
+    required:true
+  }
 
   //References are required to other tables.
 });

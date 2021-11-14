@@ -23,16 +23,17 @@ const typeDefs = gql`
     _id: ID
     description: String
     customerDescription: String
+    categoryId:Int
   }
 
   type ServiceProvided {
     _id: ID
     eligibility: String
-    openedDays: [String]
-    openedHours: [String]
-    modeOfCommunication: [String]
+    openedDays: String
+    openedHours: String
+    modeOfCommunication: String
     location: String
-    serviceCategories: [ServiceCategory]
+    categoryId:String
   }
 
   # Define which queries the front end is allowed to make and what data is returned
@@ -61,6 +62,15 @@ const typeDefs = gql`
     login(email: String!, password: String!): Auth
 
     removeService(serviceId: ID!): ServiceProvided
+
+    addService(
+      eligibility:String
+      openedDays:String
+      openedHours:String
+      modeOfCommunication:String
+      location:String
+      categoryId :String
+    ): ServiceProvided
   }
 `;
 
