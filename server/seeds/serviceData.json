@@ -5,7 +5,7 @@
     "openedHours": "9-5",
     "modeOfCommunication": "Telephone",
     "location": "Adelaide",
-    "serviceCategory": "618c6bf0f339963a705a9581"
+    "categoryId": "4"
   },
   {
     "eligibility": "Only for registered clients in the surrounding suburbs",
@@ -13,7 +13,7 @@
     "openedHours": "9-5",
     "modeOfCommunication": "Walk in or Telphone",
     "location": "Adelaide",
-    "serviceCategory": "618c6bf0f339963a705a9581"
+    "categoryId": "1"
   },
   {
     "eligibility": "No requirement",
@@ -21,7 +21,7 @@
     "openedHours": "9-5",
     "modeOfCommunication": "Walk in only",
     "location": "Marion",
-    "serviceCategory": "618c6bf0f339963a705a9581"
+    "categoryId": "3"
   },
   {
     "eligibility": "Referral is required",
@@ -29,6 +29,6 @@
     "openedHours": "9-3",
     "modeOfCommunication": "Telephone only",
     "location": "Arndale",
-    "serviceCategory": "618c6bf0f339963a705a9581"
+    "categoryId": "2"
   }
 ]
