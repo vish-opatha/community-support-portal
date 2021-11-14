@@ -5,15 +5,24 @@ import {ADD_USER} from '../utils/mutations';
 
 const Signup = () =>
 {
+    const [userData, setUserData] = useState(
+        {title:'',
+        firstName:'',
+        lastName:'',
+        organisation:'',
+        location:'',
+        email:'',
+        telephone:'',
+        orgWebsite:'',
+        password:''});
 
-    const [userData, setUserData] = useState({title:'',firstName:'',lastName:'',
-                                    organisation:'',location:'',email:'',telephone:'',orgWebsite:'',password:''});
     const [addUser] = useMutation(ADD_USER);
 
     const handleInputChange = (e)=>
     {
         const {name, value} = e.target;
         setUserData({...userData,[name]:value});
+        console.log(userData);
     }
 
     const handleFormSubmit = async (e)=>
@@ -31,7 +40,7 @@ const Signup = () =>
 
         try
         {
-            const {data} = await addUser({variables:{userData}});
+            const {data} = await addUser({variables:{...userData}});
             Auth.login(data.addUser.token);
             console.log("User is created!");
         }
@@ -43,8 +52,16 @@ const Signup = () =>
         {
             setUserData
             (
-                {title:'',firstName:'',lastName:'',
-                organisation:'',location:'',email:'',telephone:'',orgWebsite:'',password:''}
+                {
+                    title:'',
+                    firstName:'',
+                    lastName:'',
+                    organisation:'',
+                    location:'',
+                    email:'',
+                    telephone:'',
+                    orgWebsite:'',
+                    password:''}
             );
         }
     }
@@ -57,16 +74,7 @@ const Signup = () =>
             </h4>
                 <div className="form-group">
                     <label htmlFor="title">Your title:</label>
-                    <select name="title" className="browser-default"onChange={handleInputChange}>
-                        <option value="Mr">Mr.</option>
-                        <option value="Mrs.">Mrs.</option>
-                        <option value="Ms.">Ms.</option>
-                        <option value="Prof.">Prof.</option>
-                        <option value="Prof.">Dr.</option>
-                        <option value="Other">Other</option>
-                    </select>
-                    {/* <input className="form-input" type="text" name="title" value={userData.title} onChange={handleInputChange}/> */}
-
+                    <input className="form-input" type="text" name="title" value={userData.title} onChange={handleInputChange}/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="firstName">Your First Name</label>
@@ -106,7 +114,6 @@ const Signup = () =>
         </div>
     </div>
     )
-
 }
 
 export default Signup;
