@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import Search from './components/Search';
 import Login from './components/Login';
 import Signup from './pages/Signup';
+import UserService from './pages/UserServiceProfile';
 
 // import NotFound from './pages/NotFound';
 
@@ -32,6 +33,9 @@ function App() {
             <Login />
           </Route>
           <Route exact path="/agencysignup">
+            <Signup />
+          </Route>
+          <Route exact path="/UserService">
             <Signup />
           </Route>
         </Switch>
