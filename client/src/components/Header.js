@@ -1,6 +1,5 @@
 import React from 'react';
 import Auth from '../utils/auth';
-import {NavLink} from "react-router-dom";
 
 const Header = () => {
   //   const [isOpen, setIsOpen] = useState(false);
@@ -8,38 +7,38 @@ const Header = () => {
     <>
       <nav>
         <div className="nav-wrapper teal darken-4">
-          <NavLink to="/" className="brand-logo">
+          <a href="/" className="brand-logo">
             Relief Support SA
-          </NavLink>
-          {/* <NavLink to="#" data-target="mobile-demo" className="sidenav-trigger">
+          </a>
+          {/* <a href="#" data-target="mobile-demo" className="sidenav-trigger">
             <i class="material-icons">menu</i>
-          </NavLink> */}
+          </a> */}
           <ul class="right hide-on-med-and-down">
             <li>
-                <NavLink to="/">Home</NavLink>
+                <a href="/">Home</a>
             </li>
             {Auth.loggedIn()? (
               <>
             <li>
-                <NavLink to="/agencyservices">My Services</NavLink>
+                <a href="/agencyservices">My Services</a>
             </li>
             <li>
-              <NavLink to="/logout" className="button is-text" id="logoutBtn">Logout</NavLink>
+              <a href="/logout" className="buthrefn is-text" id="logoutBtn" onClick={Auth.logout}>Logout</a>
             </li>
             </>
             ) :(
               <>
             <li>
-              <NavLink to="/agencysignup">Agency Signup</NavLink>
+              <a href="/agencysignup">Agency Signup</a>
             </li>
              
             <li>
-              <NavLink to="/agencylogin">Agency Login</NavLink>
+              <a href="/agencylogin">Agency Login</a>
             </li>
             </>
             )}
             <li>
-              <NavLink to="/search">Search</NavLink>
+              <a href="/search">Search</a>
             </li>
             
           </ul>
@@ -47,23 +46,33 @@ const Header = () => {
       </nav>
 
       <ul className="sidenav" id="mobile-demo">
-        <li>
-          <NavLink to="/">Home</NavLink>
-        </li>
-        <li>
-          <NavLink to="/search">Search Items</NavLink>
-        </li>
-        <li>
-          <NavLink to="/userProfile">My Profile</NavLink>
-        </li>
-        {/* <li>
-          <NavLink className="button is-text" id="mobilelogoutBtn">
-            Logout
-          </NavLink>
-        </li> */}
-        <li>
-          <NavLink to="/login">Login</NavLink>
-        </li>
+      <li>
+                <a href="/">Home</a>
+            </li>
+            {Auth.loggedIn()? (
+              <>
+            <li>
+                <a href="/agencyservices">My Services</a>
+            </li>
+            <li>
+              <a href="/logout" className="buthrefn is-text" id="logoutBtn" onClick={Auth.logout}>Logout</a>
+            </li>
+            </>
+            ) :(
+              <>
+            <li>
+              <a href="/agencysignup">Agency Signup</a>
+            </li>
+             
+            <li>
+              <a href="/agencylogin">Agency Login</a>
+            </li>
+            </>
+            )}
+            <li>
+              <a href="/search">Search</a>
+            </li>
+            
       </ul>
     </>
   );
