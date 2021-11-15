@@ -37,7 +37,7 @@ const UserService = () =>
         try
         {
             const {data} = await addService({variables:{...serviceData}});
-            console.log("Service is created");
+            console.log(data);
         }
         catch (e)
         {
@@ -91,7 +91,9 @@ const UserService = () =>
                     <input className="form-input" type="text" name="location" value={serviceData.location} onChange={handleInputChange}/>
                 </div>
                 <div className="form-group">
-                    <button className="btn red accent-2 waves-effect" onClick={handleFormSubmit}>Add New Service</button>
+                    <button style={{marginRight:20}} className="btn lime darken-4 waves-effect" onClick={handleFormSubmit}>Add New Service</button>
+                    <button style={{marginRight:20}} className="btn lime darken-4 waves-effect">Update Service</button>
+                    <button className="btn lime darken-4 waves-effect">Delete service</button>
                 </div>
         </div>
     </div>
