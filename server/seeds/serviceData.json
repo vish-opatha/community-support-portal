@@ -1,34 +1,52 @@
 [
   {
-    "eligibility": "Need a centerlink referral",
-    "openedDays": "Monday to Friday",
-    "openedHours": "9-5",
-    "modeOfCommunication": "Telephone",
-    "location": "Adelaide",
+    "description": "Provide Food Relief",
+    "organisation":"The Salvation Army",
+    "eligibility": "We provide food relief for our clients. Depending on the requirement vouchers for supermarkets and food bank can be provided. Appointments are required.",
+    "openedDays": "Monday to Friday only.",
+    "openedHours": "9.00 am to 3.00 pm",
+    "modeOfCommunication": "Walk in or phone appointments (contact via 8000 0000)",
+    "location": "Marion",
     "categoryId": "4"
   },
   {
-    "eligibility": "Only for registered clients in the surrounding suburbs",
+    "description": "Home Visit Support",
+    "organisation":"St. Vincent de Paul Society",
+    "eligibility": "Provide support for clients in all areas. Call for confirmation",
     "openedDays": "Monday to Friday",
-    "openedHours": "9-5",
-    "modeOfCommunication": "Walk in or Telphone",
+    "openedHours": "9.00 am to 1.00 am",
+    "modeOfCommunication": "Phone for more details over 1300 729 202",
     "location": "Adelaide",
     "categoryId": "1"
   },
   {
-    "eligibility": "No requirement",
+    "description": "Provide Legal Advices and counselling",
+    "organisation":"The Magdalene Centre",
+    "eligibility": "Provide support on legal issues, housing, financial issues and emergency relief",
     "openedDays": "Monday to Friday",
-    "openedHours": "9-5",
+    "openedHours": "9.00 am to 11.30 am",
     "modeOfCommunication": "Walk in only",
-    "location": "Marion",
+    "location": "Adelaide",
     "categoryId": "3"
   },
   {
-    "eligibility": "Referral is required",
-    "openedDays": "Monday to Friday",
-    "openedHours": "9-3",
-    "modeOfCommunication": "Telephone only",
-    "location": "Arndale",
+    "description": "Provide Support for Emergency Relief",
+    "organisation":"St Mary's Picket Fence",
+    "eligibility": "Provide support on relief and clients from nearby areas are also accepted.",
+    "openedDays": "Monday, Thursday and Friday",
+    "openedHours": "9.00 am to 12.00 pm",
+    "modeOfCommunication": "Walk in only or contact via 8374 2555",
+    "location": "Oarkland Park",
+    "categoryId": "3"
+  },
+  {
+    "description": "Provide Support with Clothing",
+    "organisation":"Brighton Church of Christ",
+    "eligibility": "Provide Support with clothing from the church op shop. Accept client from nearby suburbs.",
+    "openedDays": "Monday, Wednesday and Thursday",
+    "openedHours": "10.00 am to 1.00 pm",
+    "modeOfCommunication": "Walk in or contact via 8298 7677",
+    "location": "Brighton",
     "categoryId": "2"
   }
 ]
