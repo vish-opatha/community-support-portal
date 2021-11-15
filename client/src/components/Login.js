@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-// import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 import Auth from '../utils/auth';
 
-// const Login = (props) => {
 const Login = () => {
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login] = useMutation(LOGIN_USER);
@@ -24,13 +22,12 @@ const Login = () => {
       try 
       {
         const { data } = await login({variables: { ...formState }});
-        console.log('before Auth login line 28');
         Auth.login(data.login.token);
       } 
       catch (e) 
       {
         console.error(e);
-        window.prompt("Wrong password");
+        window.alert("Wrong Password");
       } 
       
       finally 
