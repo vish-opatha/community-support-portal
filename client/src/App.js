@@ -24,6 +24,9 @@ function App() {
       <Header />
       <Router>
         <Switch>
+        <Route exact path="/logout">
+            <Home/>
+          </Route>
           <Route exact path="/">
             <Home />
           </Route>
@@ -36,7 +39,7 @@ function App() {
           <Route exact path="/agencysignup">
             <Signup />
           </Route>
-          <Route exact path="/UserService">
+          <Route exact path="/agencyservices">
             <UserService/>
           </Route>
         </Switch>
