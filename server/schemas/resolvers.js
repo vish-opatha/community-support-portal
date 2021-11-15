@@ -91,19 +91,23 @@ const resolvers = {
     },
 
     addService: async(parent,{
+      description,
+      organisation,
       eligibility,
       openedDays,
       openedHours,
       modeOfCommunication,
       location,
-      categoryId
+      categoryId,
     })=> { const service = await ServiceProvided.create({
+      description,
+      organisation,
       eligibility,
       openedDays,
       openedHours,
       modeOfCommunication,
       location,
-      categoryId
+      categoryId,
     });
     
     return service;}

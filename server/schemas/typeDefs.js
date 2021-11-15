@@ -66,6 +66,8 @@ const typeDefs = gql`
     removeService(serviceId: ID!): ServiceProvided
 
     addService(
+      description: String
+      organisation: String
       eligibility:String
       openedDays:String
       openedHours:String

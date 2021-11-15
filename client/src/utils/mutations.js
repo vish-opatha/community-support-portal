@@ -29,13 +29,12 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_SERVICE = gql`
-mutation addService($eligibility: String!, $openedDays: String!, $openedHours: String!, $modeOfCommunication: String!,$location:String!,$categoryId:String) 
+mutation addService($description:String,$organisation: String, $eligibility: String!, $openedDays: String!, $openedHours: String!, $modeOfCommunication: String!,$location:String!,$categoryId:String) 
 {
-    addUser(eligibility: $eligibility, openedDays: $openedDays, openedHours: $openedHours, modeOfCommunication: $modeOfCommunication,location:$location,categoryId:$categoryId) 
+    addService(description:$description, organisation:$organisation, eligibility: $eligibility, openedDays: $openedDays, openedHours: $openedHours, modeOfCommunication: $modeOfCommunication,location:$location,categoryId:$categoryId) 
     {
         _id
-        location
-        
+                
     }
 }
 `;

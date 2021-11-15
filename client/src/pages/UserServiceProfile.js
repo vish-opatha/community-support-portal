@@ -6,7 +6,10 @@ import {ADD_SERVICE} from '../utils/mutations';
 const UserService = () =>
 {
     const [serviceData, setserviceData] = useState(
-    {   eligibility:'',
+    {   
+        description:'',
+        organisation:'',          
+        eligibility:'',
         openedDays:'',
         openedHours:'',
         modeOfCommunication:'',
@@ -38,6 +41,8 @@ const UserService = () =>
         {
             const {data} = await addService({variables:{...serviceData}});
             console.log(data);
+            const b = {...serviceData};
+            console.log(b);
         }
         catch (e)
         {
@@ -49,12 +54,14 @@ const UserService = () =>
             (
                 {
                     
+                    description:'',
+                    organisation:'',          
+                    eligibility:'',
                     openedDays:'',
                     openedHours:'',
                     modeOfCommunication:'',
                     location:'',
-                    categoryId:'',
-                    eligibility:'',
+                    categoryId:''
                 }
             );
         }
@@ -67,8 +74,12 @@ const UserService = () =>
                 Add new services that you provide at the moment. 
             </h4>
                 <div className="form-group">
-                    <label htmlFor="categoryId" style={{fontSize:11, fontWeight:600}}>Category</label>
-                    <input className="form-input" type="text" name="categoryId" value={serviceData.categoryId} onChange={handleInputChange}/>
+                    <label htmlFor="description" style={{fontSize:11, fontWeight:600}}>Title</label>
+                    <input className="form-input" type="text" name="description" value={serviceData.description} onChange={handleInputChange}/>
+                </div>
+                <div className="form-group">
+                    <label htmlFor="organisation" style={{fontSize:11, fontWeight:600}}>Organisation</label>
+                    <input className="form-input" type="text" name="organisation" value={serviceData.organisation} onChange={handleInputChange}/>
                 </div>
                 <div className="form-group">
                     <label htmlFor="eligibility" style={{fontSize:11, fontWeight:600}}>Details and eligibility requirements if any</label>
@@ -83,7 +94,7 @@ const UserService = () =>
                     <input className="form-input" type="text" name="openedHours" value={serviceData.openedHours} onChange={handleInputChange}/>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="communication" style={{fontSize:11, fontWeight:600}}>Mode of Communication</label>
+                    <label htmlFor="modeOfCommunication" style={{fontSize:11, fontWeight:600}}>Mode of Communication</label>
                     <input className="form-input" type="text" name="modeOfCommunication" value={serviceData.modeOfCommunication} onChange={handleInputChange}/>
                 </div>
                 <div className="form-group">
