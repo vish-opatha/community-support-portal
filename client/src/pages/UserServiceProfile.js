@@ -83,7 +83,7 @@ const UserService = () =>
                 </div>
                 <div className="form-group">
                     <label htmlFor="eligibility" style={{fontSize:11, fontWeight:600}}>Details and eligibility requirements if any</label>
-                    <input className="form-input" type="text" name="eligibility" value={serviceData.eligibility} onChange={handleInputChange}/>
+                    <input className="materialize-textarea" data-length="250" name="eligibility" value={serviceData.eligibility} onChange={handleInputChange}/>
                 </div>
                 <div className="form-group" style={{fontSize:11, fontWeight:600}}>
                     <label htmlFor="openedDays">Open days</label>
