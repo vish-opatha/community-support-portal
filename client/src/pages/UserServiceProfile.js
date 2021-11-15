@@ -1,10 +1,17 @@
 import React, {useState} from "react";
 import {useMutation} from "@apollo/client";
 import {ADD_SERVICE} from '../utils/mutations';
+import Auth from '../utils/auth';
 
 
 const UserService = () =>
 {
+    const token = Auth.loggedIn() ? Auth.getToken():null;
+
+    if(!token){
+        window.location.assign('/agencylogin');
+    }
+    
     const [serviceData, setserviceData] = useState(
     {   
         description:'',
@@ -29,13 +36,6 @@ const UserService = () =>
     const handleFormSubmit = async (e)=>
     {
         e.preventDefault();
-
-        // const form = e.currentTarget;
-        // if(form.checkValidity()===false)
-        // {
-        //     e.preventDefault();
-        //     e.stopPropogration();
-        // }
 
         try
         {
@@ -67,7 +67,7 @@ const UserService = () =>
         }
     }
 
-    return(
+    return(    
     <div className="container center">
         <div className="row">
             <h4 className="flow-text" style={{ fontWeight: 600 }}>
@@ -108,6 +108,7 @@ const UserService = () =>
                 </div>
         </div>
     </div>
+    
     )
 }
     
