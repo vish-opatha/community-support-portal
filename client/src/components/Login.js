@@ -54,7 +54,7 @@ const Login = () => {
               <input className="form-input" type="password" name="password" id="password" value={formState.password} onChange={handleChange}/>
             </div>
             <div className="form-group">
-              <button className="btn red accent-2 waves-effect" onClick={handleFormSubmit}>Login</button>
+              <button className="btn lime darken-4 waves-effect" onClick={handleFormSubmit}>Login</button>
             </div>
           </form>
       </div>
