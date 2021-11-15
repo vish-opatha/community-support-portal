@@ -1,11 +1,14 @@
 import React, {useState} from 'react';
 import { useQuery } from '@apollo/client';
 import {SEARCH_BY_LOCATION} from '../utils/queries';
-import { ImLocation} from 'react-icons/im'
+import { ImLocation} from 'react-icons/im';
+import Serviceoptions from './ServicesOption';
 
 const Search = () => {
+  // eslint-disable-next-line
    const [searchData, setSearchData] =useState([]);
    const [searchLocation, setSearchLocation]=useState({location:''});
+   // eslint-disable-next-line
    const {loading, data} = useQuery(SEARCH_BY_LOCATION, {variables:{...searchLocation}});
 
    const handleChange = (event) => 
@@ -14,8 +17,6 @@ const Search = () => {
  
      setSearchLocation({searchLocation, [name]: value,});
      setSearchData(data);
-     console.log(loading);
-     console.log(searchData)
    }
 
   return (
@@ -27,6 +28,7 @@ const Search = () => {
               <label>Search by Category</label>
                 <select id="category" className="browser-default">
                   <option value="" disabled selected>I want help with</option>
+                  <Serviceoptions/>
                 </select>
             </div>
         </div>
@@ -38,16 +40,16 @@ const Search = () => {
           </div>
         </div>
 
-        <div className="row">
+        <div className="row center">
         {data && data.servicesByLocation.map((item)=> {
           return(
             <>
-                <div className="col s12 m6">
+                <div className="col s12 m6" style={{ color:"black"}}>
                   <div className="card white darken-1">
                     <div className="card-content black-text">
                       <span className="card-title" style={{fontWeight:'bold',color:"#004d40"}}>{item.description}</span>
                       <span style={{fontWeight:'bold', fontSize:15}}>{item.organisation}</span>
-                      <p style={{fontWeight:'bold'}}>{`Description`}</p>{item.eligibility}
+                      <p style={{fontWeight:'bold'}}></p>{item.eligibility}
                       <p></p>
                       <p></p>
                       <p style={{fontWeight:'bold'}}>{`Opened Days`}</p>{item.openedDays}
