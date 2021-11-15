@@ -1,12 +1,12 @@
 import { gql } from '@apollo/client';
 
 export const GET_CATEGORIES = gql`
-    query categories{
+    query getCategories{
         serviceCategories{
             _id
+            categoryId
             customerDescription
             description
-            categoryId
         }
     }
 `
@@ -26,3 +26,4 @@ export const SEARCH_BY_LOCATION = gql`
         }
     }
 `
+
