@@ -24,7 +24,7 @@ const Footer = () => {
               </a>
             </div>
             <div className="col l4 offset-l2 s12">
-              <h5 className="white-text">Connect with the developers</h5>
+              <h5 className="white-text">Connect with the developer</h5>
               <ul>
                 <li >
                   <a
