@@ -109,7 +109,7 @@ const Signup = () =>
                     <input className="form-input" type="password" name="password" value={userData.password} onChange={handleInputChange}/>
                 </div>
                 <div className="form-group">
-                    <button className="btn red accent-2 waves-effect" onClick={handleFormSubmit}>Create Account</button>
+                    <button className="btn lime darken-4 waves-effect" onClick={handleFormSubmit}>Create Account</button>
                 </div>
         </div>
     </div>
