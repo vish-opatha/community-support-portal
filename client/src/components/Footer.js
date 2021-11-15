@@ -11,7 +11,7 @@ const Footer = () => {
               <h5 className="white-text">About</h5>
               <p className="grey-text text-lighten-4" >
                 <span>Relief Support SA </span>is a project which is purely
-                inteded to support the South Australian community who are
+                inteded to support the people in the South Australian community who are
                 expecting to receive different types of community support
                 services.
               </p>
@@ -36,7 +36,7 @@ const Footer = () => {
                 </li>
         
                 <li style={{marginTop:10}}>
-                  <p>The information about the services in this site are registered services by different agencies and the availability of services and details could be changed at at any time.</p>
+                  <p>The information about the services in this site are registered services by different agencies and the availability of services and details could be changed at any time.</p>
                 </li>
               </ul>
             </div>
