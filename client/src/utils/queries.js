@@ -15,6 +15,8 @@ export const SEARCH_BY_LOCATION = gql`
     query searchByLocation($location:String){
         servicesByLocation(location:$location){
             _id
+            description
+            organisation
             eligibility
             openedDays
             openedHours

@@ -28,6 +28,8 @@ const typeDefs = gql`
 
   type ServiceProvided {
     _id: ID
+    description: String
+    organisation: String
     eligibility: String
     openedDays: String
     openedHours: String

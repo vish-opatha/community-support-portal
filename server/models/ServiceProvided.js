@@ -1,6 +1,16 @@
 const { Schema, model } = require('mongoose');
 
 const serviceProvidedSchema = new Schema({
+  description: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  organisation: {
+    type: String,
+    required: true,
+    trim: true,
+  },
   eligibility: {
     type: String,
     required: true,
@@ -26,7 +36,6 @@ const serviceProvidedSchema = new Schema({
   },
   categoryId: {
     type:String,
-    required:true
   }
 
   //References are required to other tables.
