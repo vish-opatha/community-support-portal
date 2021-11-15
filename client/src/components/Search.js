@@ -1,69 +1,66 @@
 import React, {useState} from 'react';
-import ServiceOption from './ServicesOption';
-const agencyServices = [
-  {
-      description: "Provide Food",
-      label: "I want help with food",
-      value:1
-    },
-    {
-      description: "Provide Bustickets",
-      label: "I want help with Bustickets",
-      value:2
-    },
-    {
-      description: "Provide Clothing",
-      label: "I want help with Clothing",
-      value:3
-    },
-    {
-      description: "Provide Furniture",
-      label: "I want help with essential food",
-      value:4
-    },
-    {
-      description: "Provide help for domestic violence victims",
-      label: "I want help with domestic violence",
-      value:5
-    }
-  ];
+import { useQuery } from '@apollo/client';
+import {SEARCH_BY_LOCATION} from '../utils/queries';
+
 const Search = () => {
+   const [searchData, setSearchData] =useState([]);
+   const [searchLocation, setSearchLocation]=useState({location:''});
+   const {loading, data} = useQuery(SEARCH_BY_LOCATION, {variables:{...searchLocation}});
 
-  // const [dropDownValue,setValue]=useState({categoryId:""})
-  // const dropDownChangeHandler = e =>
-  // {
-  //   setValue(e.key);
-  //   console.log(dropDownValue);
-
-  // }
-
- const [result, selectedValue] = useState(agencyServices.label);
- const selectHandle = e =>
- {
-    selectedValue(e.label);
- }
+   const handleChange = (event) => 
+   {
+     const { name, value } = event.target;
+ 
+     setSearchLocation({searchLocation, [name]: value,});
+     setSearchData(data);
+     console.log(loading);
+     console.log(searchData)
+   }
 
   return (
+   
     <div className="container center">
-      <div className="row">
-        <h3 className="flow-text" style={{ fontWeight: 600 }}>
-          You can serarch services by the category and by the location.
-        </h3>
-        <div className="col s12 m8">
-          <label style={{ fontWeight: 600 }}>
-              Search for the support you want
-          </label>
-          <ServiceOption onChange={selectHandle} />
-          <div>{result}</div>
+        <div className="row center">
+            <h3 className="flow-text">You can search the services from here</h3>
+            <div className="col s12 m12">
+              <label>Search by Category</label>
+                <select id="category" className="browser-default">
+                  <option value="" disabled selected>I want help with</option>
+                </select>
+            </div>
         </div>
-        <div className="col s12 m4">
-          <label for="suburb" style={{ fontWeight: 600 }}>
-            Suburb
-          </label>
-          <input id="suburb" type="text" />
+
+        <div className="row center">
+          <div className="col s12 m12">
+            <label for="icon_prefix">Enter your suburb</label>
+            <input type="text" name="location" value={searchLocation.location} onChange={handleChange}/>
+          </div>
         </div>
+
+        <div className="row">
+        {data && data.servicesByLocation.map((item)=> {
+          return(
+            <>
+                <div className="col s12 m12">
+                  <div className="card white darken-1">
+                    <div className="card-content black-text">
+                      <span className="card-title">{item.modeOfCommunication}</span>
+                          <p>{item.location} {item.eligibility}</p>
+                          <p>Things for you to consider</p>
+                          <br/>
+                          
+                          <p>Description{` `} {item.openedDays}{item.eligibility}</p>
+                    </div>
+                  </div>
+                </div>
+            </>
+          )
+        })
+        }
+        
       </div>
-    </div>
+      </div>
+   
   );
 };
 
