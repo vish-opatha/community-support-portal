@@ -37,8 +37,6 @@ const serviceProvidedSchema = new Schema({
   categoryId: {
     type:String,
   }
-
-  //References are required to other tables.
 });
 
 const ServiceProvided = model('ServiceProvided', serviceProvidedSchema);

@@ -1,5 +1,4 @@
 const { AuthenticationError } = require('apollo-server-express');
-// const { User, ServiceCategory, ServiceProvided } = require('../models');
 const User = require('../models/User');
 const ServiceCategory = require('../models/ServiceCategory');
 const ServiceProvided = require('../models/ServiceProvided');
@@ -30,7 +29,7 @@ const resolvers = {
 
     //########## Search Services by location=================
     servicesByLocation: async (parent, args) => {
-      const a = await ServiceProvided.find({})
+      const a = await ServiceProvided.find({});
       return a.filter((s) => s.location == args.location);
     },
 
@@ -90,27 +89,32 @@ const resolvers = {
       return await ServiceProvided.findOneAndDelete({ _id: serviceId });
     },
 
-    addService: async(parent,{
-      description,
-      organisation,
-      eligibility,
-      openedDays,
-      openedHours,
-      modeOfCommunication,
-      location,
-      categoryId,
-    })=> { const service = await ServiceProvided.create({
-      description,
-      organisation,
-      eligibility,
-      openedDays,
-      openedHours,
-      modeOfCommunication,
-      location,
-      categoryId,
-    });
-    
-    return service;}
+    addService: async (
+      parent,
+      {
+        description,
+        organisation,
+        eligibility,
+        openedDays,
+        openedHours,
+        modeOfCommunication,
+        location,
+        categoryId,
+      }
+    ) => {
+      const service = await ServiceProvided.create({
+        description,
+        organisation,
+        eligibility,
+        openedDays,
+        openedHours,
+        modeOfCommunication,
+        location,
+        categoryId,
+      });
+
+      return service;
+    },
   },
 };
 module.exports = resolvers;
